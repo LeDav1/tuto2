@@ -1,5 +1,18 @@
 ---
+import Avatar from "./Avatar.astro"
 ---
 <a href="/">Home</a>
 <a href="/about/">About</a>
 <a href="/blog/">Blog</a>
+<Avatar link="www.google.com" initial="G" />
+
+<style>
+    a {
+        padding: 0.5rem 1rem;
+        color: white;
+        background-color: lightblue;
+        text-decoration: none;
+        border-radius: 0.25rem;
+        /* display: inline-flex; */
+    }
+</style>
