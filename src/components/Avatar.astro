@@ -1,27 +1,32 @@
 ---
-const {link, initial} = Astro.props;
-
+const { link, initial, src, alt = '' } = Astro.props;
 ---
 
-<a href={`https://${link}`}>{initial}</a>
+<a href={`https://${link}`} aria-label={alt || link}>
+    {src ? <img src={src} alt={alt || initial} loading="lazy" /> : initial}
+</a>
 
-<style define:vars={{link}}>
+<style>
     a {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
+        align-items: start;
+        /* justify-content: center; */
         width: 3rem;
         height: 3rem;
-        background-color: bisque;
+        /* background-color: bisque;
         color: #222;
         font-weight: bold;
         font-size: 1.2rem;
         border-radius: 50%;
         text-decoration: none;
         transition: background 0.2s;
-        
+        overflow: hidden; */ */
     }
-    a:hover {
-        background-color: #90cdf4;
+    a img {
+        width: 90%;
+        height: 90%;
+        object-fit: cover;
+        display: block;
+        border-radius: 50%;
     }
 </style>

@@ -1,8 +1,10 @@
 ---
 import Navigation from './Navigation.astro'
+import Menu from './Menu.astro'
 ---
 <header>
     <nav>
+        <Menu/>
         <Navigation/>
     </nav>
 </header>
@@ -10,6 +12,7 @@ import Navigation from './Navigation.astro'
 <style>
     nav {
         display: flex;
+        justify-content: flex-start;
         /* leave 3em of space between items */
         gap: 3em;
     }
